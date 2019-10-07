@@ -1,0 +1,23 @@
+.header-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1%;
+}
+.logo{
+    margin-left: 8%;
+}
+.search-bar{
+    margin-left: 20%;
+}
+
+.header-buttons{
+    display: flex;
+}
+
+button{
+    border: none;
+    margin-right: 10px;
+    background-color: rgb(118, 183, 236);
+    color: rgba(32, 11, 11, 0.459);
+}
+
