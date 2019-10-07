@@ -1,7 +1,7 @@
 {
   "name": "property-work-web",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
@@ -29,16 +29,14 @@
     ]
   },
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RealAther/property-work-web.git"
-  },
+  "repository": "git+https://github.com/RealAther/property-work-web.git",
   "keywords": [],
-  "author": "",
+  "author": "Sajeel Ahmad",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/RealAther/property-work-web/issues"
   },
   "homepage": "https://github.com/RealAther/property-work-web#readme",
+  "devDependencies": {},
   "description": ""
 }
