@@ -1,5 +1,5 @@
 import React from 'react';
-import '../static/HeaderStyle.css';
+import '../static/CompStyle.css';
 const Header = () => {
     return (
         <div className="header-wrapper">
@@ -22,10 +22,6 @@ const Header = () => {
                 Admin Portal
             </button>
         </div>
-
-
-
-
     )
 }
 
