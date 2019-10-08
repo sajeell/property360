@@ -11,10 +11,9 @@ const Contact = () => {
             <label htmlFor="validationServer01">First name</label>
             <input
               type="text"
-              className="form-control is-valid"
+              className="form-control "
               id="validationServer01"
               placeholder="First name"
-              value="Mark"
               required
             ></input>
             <div className="valid-feedback">Looks good!</div>
@@ -23,10 +22,9 @@ const Contact = () => {
             <label htmlFor="validationServer02">Last name</label>
             <input
               type="text"
-              className="form-control is-valid"
+              className="form-control "
               id="validationServer02"
               placeholder="Last name"
-              value="Otto"
               required
             ></input>
             <div className="valid-feedback">Looks good!</div>
@@ -74,6 +72,7 @@ const Contact = () => {
         <img
           src="http://images.clipartpanda.com/phone-icon-vector-11954230141737421095rickvanderzwet_Phone.svg.med.png"
           className="contact-logo"
+          alt="Logo!!"
         ></img>
       </div>
     </div>
