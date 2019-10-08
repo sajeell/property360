@@ -10174,6 +10174,16 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
+svg-loaders-react@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/svg-loaders-react/-/svg-loaders-react-2.0.1.tgz#67b50783b1dd0f9bb845a7248e46290ba828fc06"
+  integrity sha512-7oOA29mMLPuGNZ5UkyprH/4RysYy6F19/P8cr5mbrWJeNseH01ih5YpynNFhgpvUaQ8h6vStMS8wd3IFELcFYA==
+
+svg-loaders@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/svg-loaders/-/svg-loaders-0.2.0.tgz#3e3072f4f643e55c98d79b1ca1f15bf65aac701d"
+  integrity sha512-yE4UtCqr8L45QKhZX6p4B07iZfFrDPXmDLfxqJN+uOeJ1gAxpTXA4qOIVvjv1JsguDFanrph1k9fF1jciB1NeQ==
+
 svg-parser@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/svg-parser/-/svg-parser-2.0.2.tgz#d134cc396fa2681dc64f518330784e98bd801ec8"

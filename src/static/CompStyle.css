@@ -19,8 +19,14 @@
 }
 
 .lbottom-wrapper {
-  align-items: center;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+}
+.lbottom-wrapper p {
+  margin-right: 20px;
+  font-weight: bolder;
+  font-size: 1.5em;
 }
 
 .contact-wrapper {

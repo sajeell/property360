@@ -6,6 +6,7 @@ import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import Carouse from './components/Carousel.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import LBottom from './components/Landing Bottom.jsx'
 function App() {
   return (
     <div className="app-wrapper">
@@ -15,6 +16,7 @@ function App() {
       <p></p>
       <p className="middle-text ">We Rent & Sell Everything! ...</p>
       <VR />
+      <LBottom />
       <Contact />
       <Footer />
     </div>
