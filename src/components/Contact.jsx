@@ -4,29 +4,17 @@ const Contact = () => {
   return (
     <div className="contact-wrapper">
       <form>
-        <h3>Contact Us:</h3>
+        <h3 className="contact-us-header">Contact Us</h3>
 
         <div className="form-row">
           <div className="col-md-6 mb-3">
             <label htmlFor="validationServer01">First name</label>
-            <input
-              type="text"
-              className="form-control "
-              id="validationServer01"
-              placeholder="First name"
-              required
-            ></input>
+            <input type="text" className="form-control " id="validationServer01" placeholder="First name" required></input>
             <div className="valid-feedback">Looks good!</div>
           </div>
           <div className="col-md-6 mb-3">
             <label htmlFor="validationServer02">Last name</label>
-            <input
-              type="text"
-              className="form-control "
-              id="validationServer02"
-              placeholder="Last name"
-              required
-            ></input>
+            <input type="text" className="form-control " id="validationServer02" placeholder="Last name" required></input>
             <div className="valid-feedback">Looks good!</div>
           </div>
           <br />
@@ -70,9 +58,9 @@ const Contact = () => {
 
       <div>
         <img
+          alt
           src="http://images.clipartpanda.com/phone-icon-vector-11954230141737421095rickvanderzwet_Phone.svg.med.png"
           className="contact-logo"
-          alt="Logo!!"
         ></img>
       </div>
     </div>

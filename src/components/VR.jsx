@@ -7,7 +7,7 @@ const VR = () => (
   <div className="vr-wrapper">
     <Pannellum
       width="100%"
-      height="90vh"
+      height="50vh"
       image={myImage}
       pitch={10}
       yaw={180}
