@@ -2,7 +2,7 @@ import React from 'react'
 import '../static/CompStyle.css'
 const Contact = () => {
     return (
-        <div className="footer-wrapper">
+        <div className="contact-wrapper">
             <form>
                 <h3>Contact Us:</h3>
                 <div className="form-row">

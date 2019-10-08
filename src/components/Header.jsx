@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <div className="header-wrapper">
       <div class="logo">
-        <h3>Gulberg Greens</h3>
+        <h3>Property 360</h3>
       </div>
 
       <div className="search-bar">
