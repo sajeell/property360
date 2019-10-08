@@ -11,19 +11,26 @@
   text-indent: 15px;
 }
 
-
-
 .vr-wrapper {
   padding: 1%;
 }
 
-
 .lbottom-wrapper{
   display: flex;
   justify-content: center;
-
+  align-items: center;
+  text-align: center;
 }
 
-.div{
-  padding:20px;
+.footer-wrapper{
+  padding-top: 1%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.image-sectors{
+  display: flex;
+  justify-content: center;
+  margin-left: 18%;
 }

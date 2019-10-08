@@ -3,7 +3,7 @@ import '../static/CompStyle.css'
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
-
+import Contact from './Contact.jsx';
 const images = [
     {
         url: 'https://lonelyplanetimages.imgix.net/a/g/hi/t/0f58350048b1b544393b5651242e7eb5-shah-faisal-mosque.jpg?fit=crop&w=960&h=416',
@@ -147,6 +147,7 @@ const LBottom = () => {
                         )}
                     </div>
                 </div>
+                <Contact />
             </div>
         </div>
     );
