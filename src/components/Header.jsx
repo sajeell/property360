@@ -1,9 +1,9 @@
 import React from 'react'
 import '../static/CompStyle.css'
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import { makeStyles } from '@material-ui/core/styles'
+import Paper from '@material-ui/core/Paper'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 const useStyles = makeStyles(theme => ({
   button: {
     margin: theme.spacing(1),
@@ -14,36 +14,29 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
-}));
-
+}))
 
 const Header = () => {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const classes = useStyles()
+  const [value, setValue] = React.useState(0)
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+    event.preventDefault()
+    setValue(newValue)
+  }
 
   return (
     <div className="header-wrapper">
-      <div class="logo">
-        <h3>Property 360</h3>
+      <div className="logo">
+        <h1>Property360</h1>
       </div>
 
       <div className="search-bar">
-
         <input type="text" placeholder="Search" />
       </div>
       <div className="header-buttons">
         <Paper className={classes.root}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            indicatorColor="secondary"
-            textColor="secondary"
-            centered
-          >
+          <Tabs value={value} onChange={handleChange} indicatorColor="primary" textColor="primary" centered>
             <Tab label="Rent" />
             <Tab label="Purchase" />
             <Tab label="Sale" />

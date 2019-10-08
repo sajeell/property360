@@ -2,71 +2,85 @@
   display: flex;
   justify-content: space-evenly;
   margin-top: 1%;
+  color: black;
 }
 .logo {
   margin-left: 8%;
+  font-weight: 2000px;
 }
 .search-bar {
   margin-left: 20%;
   text-indent: 15px;
+  margin-top: 0.8em;
 }
 
 .vr-wrapper {
   padding: 1%;
 }
 
-.lbottom-wrapper{
-  display: flex;
-  justify-content: center;
+.lbottom-wrapper {
   align-items: center;
   text-align: center;
 }
 
-.contact-wrapper{
+.contact-wrapper {
   display: flex;
   justify-content: center;
-  padding: 0.8%;
+  background-color: lightgrey;
+  padding: 5%;
+
+  background-size: cover;
 }
 
-.footer-wrapper{
+form {
+  margin-left: 11em;
+}
+
+.footer-wrapper {
   display: flex;
   justify-content: center;
   /* background-color: lightblue; */
   border-top: 1px solid grey;
-
 }
 
-.copy{
+.copy {
   padding: 1%;
 }
 
-.image-sectors{
+.image-sectors {
   display: flex;
   justify-content: center;
   margin-left: 18%;
+  margin-bottom: 5%;
 }
 
-.carousel-text{
+.carousel-text {
   font-size: 2em;
   background: transparent;
   user-select: none;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-.carousel-wrapper{
+.carousel-wrapper {
   margin: auto;
   padding: auto;
-  background-size: cover;
 }
 
-li{
+li {
   padding: 2px;
 }
 
 @media only screen and (max-width: 1154px) {
-  .header-wrapper{
+  .header-wrapper {
     display: flex;
     flex-direction: column;
   }
+}
+
+.contact-logo {
+  background-color: lightgrey;
+  height: 200px;
+  width: 300px;
+  margin-left: 10%;
+  margin-top: 30%;
 }
