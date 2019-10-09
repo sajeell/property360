@@ -9,24 +9,24 @@ const Contact = () => {
         </div>
         <div className="form-row">
           <div className="col-md-6 mb-3">
-            <label htmlFor="validationServer01">First name</label>
+
             <input type="text" className="form-control " id="validationServer01" placeholder="First name" required></input>
             <div className="valid-feedback">Looks good!</div>
           </div>
           <div className="col-md-6 mb-3">
-            <label htmlFor="validationServer02">Last name</label>
+
             <input type="text" className="form-control " id="validationServer02" placeholder="Last name" required></input>
             <div className="valid-feedback">Looks good!</div>
           </div>
         </div>
         <div className="form-row">
           <div className="col-md-6 mb-3">
-            <label htmlFor="validationServer03">City</label>
+
             <input type="text" className="form-control" id="validationServer03" placeholder="City" required></input>
             <div className="invalid-feedback">Please provide a valid city.</div>
           </div>
           <div className="col-md-6 mb-3">
-            <label htmlFor="validationServer04">State</label>
+
             <input type="text" className="form-control" id="validationServer04" placeholder="State" required></input>
             <div className="invalid-feedback">Please provide a valid state.</div>
           </div>
@@ -48,7 +48,6 @@ const Contact = () => {
         <img
           src="http://images.clipartpanda.com/phone-icon-vector-11954230141737421095rickvanderzwet_Phone.svg.med.png"
           className="contact-logo"
-
         ></img>
       </div>
     </div>

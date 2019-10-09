@@ -5,6 +5,7 @@ import myImage from '../static/myImage.jpg'
 
 const VR = () => (
   <div className="vr-wrapper">
+    <p>Property360 - The only Real Estate Platform in Pakistan that provides facility of viewing properties in VR in its website</p>
     <Pannellum
       width="100%"
       height="50vh"

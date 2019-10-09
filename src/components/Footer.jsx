@@ -10,8 +10,7 @@ const Footer = () => {
                 <p> 2019 Copyrights Reserved </p>
             </div>
             <div className="copy">
-
-                <p>Made with Love by <a href="www.youtube.com">Digitex</a> </p>
+                <p>Made with Love by </p>
             </div>
             <div className="copy">
                 <ul>

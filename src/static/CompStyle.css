@@ -10,9 +10,12 @@
   text-indent: 15px;
   margin-top: 0.8em;
 }
-
 .vr-wrapper {
   padding: 1%;
+  text-align: center;
+}
+.vr-wrapper p {
+  font-size: 1.2em;
 }
 
 .lbottom-wrapper {
@@ -45,7 +48,6 @@ form {
   /* background-color: lightblue; */
   border-top: 1px solid grey;
 }
-
 .copy {
   padding: 1%;
 }
@@ -62,6 +64,9 @@ li {
 }
 
 @media only screen and (max-width: 843px) {
+  html{
+    font-size: 10px;
+  }
   .header-wrapper {
     display: flex;
     justify-content: space-between;
@@ -114,7 +119,7 @@ li {
   text-align: center;
   text-transform: uppercase;
   font-size: 50px;
-  margin-bottom: 6%;
+  margin-bottom: 12%;
 }
 
 .contact-logo {
@@ -127,4 +132,31 @@ li {
 
 .form-row {
   padding: 0;
+}
+
+.middle-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.middle-row-item{
+  padding: 2%;
+}
+
+
+@media only screen and (max-width: 530px) {
+  .middle-wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+#middle-heading{
+  padding: 3%;
+  margin-left: 40%;
+}
+
+h3{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
 }
