@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="app-wrapper">
       <Header />
-      <p></p>
+
       <Carouse />
       <p></p>
       <p className="middle-text ">We Rent & Sell Everything! ...</p>
