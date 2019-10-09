@@ -72,7 +72,7 @@ const Contact = () => {
         <img
           src="http://images.clipartpanda.com/phone-icon-vector-11954230141737421095rickvanderzwet_Phone.svg.med.png"
           className="contact-logo"
-          alt="Logo!!"
+          alt
         ></img>
       </div>
     </div>
