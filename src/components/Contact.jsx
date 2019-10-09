@@ -4,8 +4,9 @@ const Contact = () => {
   return (
     <div className="contact-wrapper">
       <form>
-        <h3 className="contact-us-header">Contact Us</h3>
-
+        <div className="contact-us-header">
+          <h3>Contact Us</h3>
+        </div>
         <div className="form-row">
           <div className="col-md-6 mb-3">
             <label htmlFor="validationServer01">First name</label>
@@ -17,29 +18,16 @@ const Contact = () => {
             <input type="text" className="form-control " id="validationServer02" placeholder="Last name" required></input>
             <div className="valid-feedback">Looks good!</div>
           </div>
-          <br />
         </div>
         <div className="form-row">
           <div className="col-md-6 mb-3">
             <label htmlFor="validationServer03">City</label>
-            <input
-              type="text"
-              className="form-control is-invalid"
-              id="validationServer03"
-              placeholder="City"
-              required
-            ></input>
+            <input type="text" className="form-control" id="validationServer03" placeholder="City" required></input>
             <div className="invalid-feedback">Please provide a valid city.</div>
           </div>
           <div className="col-md-6 mb-3">
             <label htmlFor="validationServer04">State</label>
-            <input
-              type="text"
-              className="form-control is-invalid"
-              id="validationServer04"
-              placeholder="State"
-              required
-            ></input>
+            <input type="text" className="form-control" id="validationServer04" placeholder="State" required></input>
             <div className="invalid-feedback">Please provide a valid state.</div>
           </div>
         </div>

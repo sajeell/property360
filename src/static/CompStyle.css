@@ -1,7 +1,4 @@
 .header-wrapper {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 1%;
   color: black;
 }
 .logo {
@@ -34,8 +31,6 @@
   justify-content: center;
   background-color: lightgrey;
   padding: 5%;
-
-  background-size: cover;
 }
 
 form {
@@ -55,13 +50,6 @@ form {
   padding: 1%;
 }
 
-.image-sectors {
-  display: flex;
-  justify-content: center;
-  margin-left: 18%;
-  margin-bottom: 5%;
-}
-
 .carousel-text {
   font-size: 2em;
   background: transparent;
@@ -69,26 +57,64 @@ form {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.carousel-wrapper {
-  margin: auto;
-  padding: auto;
-}
-
 li {
   padding: 2px;
 }
 
-@media only screen and (max-width: 1154px) {
+@media only screen and (max-width: 843px) {
   .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .mr-auto navbar-nav {
     display: flex;
     flex-direction: column;
   }
 }
 
-.contact-us-header {
+@media only screen and (max-width: 395px) {
+  .contact-us-header h3 {
+    font-size: 40px;
+  }
+  form {
+    margin-left: 14em;
+  }
+}
+@media only screen and (max-width: 409px) {
+  form {
+    margin-left: 14em;
+  }
+}
+@media only screen and (max-width: 415px) {
+  form {
+    margin-left: 14em;
+  }
+}
+@media only screen and (min-width: 429px) {
+  form {
+    margin-left: 14em;
+  }
+}
+@media only screen and (max-width: 425px) {
+  form {
+    margin-left: 14em;
+  }
+}
+
+@media only screen and (max-width: 601px) {
+  .MuiPaper-root {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.contact-us-header h3 {
+  text-align: center;
   text-transform: uppercase;
-  font-size: 80px;
-  margin-bottom: 70px;
+  font-size: 50px;
+  margin-bottom: 6%;
 }
 
 .contact-logo {
@@ -97,4 +123,8 @@ li {
   width: 220px;
   margin-left: 70%;
   margin-top: 100%;
+}
+
+.form-row {
+  padding: 0;
 }
