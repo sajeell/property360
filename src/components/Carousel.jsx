@@ -11,7 +11,7 @@ const Carouse = () => {
             className="d-block w-100"
             src="https://lonelyplanetimages.imgix.net/a/g/hi/t/0f58350048b1b544393b5651242e7eb5-shah-faisal-mosque.jpg?fit=crop&w=960&h=416"
             alt="First slide"
-            height="700px"
+            height="600px"
           />
           <Carousel.Caption>
             <h3 className="carousel-text">Property360</h3>
@@ -23,7 +23,7 @@ const Carouse = () => {
             className="d-block w-100"
             src="https://lonelyplanetimages.imgix.net/a/g/hi/t/0f58350048b1b544393b5651242e7eb5-shah-faisal-mosque.jpg?fit=crop&w=960&h=416"
             alt="Second slide"
-            height="700px"
+            height="600px"
           />
 
           <Carousel.Caption>
@@ -36,7 +36,7 @@ const Carouse = () => {
             className="d-block w-100"
             src="https://lonelyplanetimages.imgix.net/a/g/hi/t/0f58350048b1b544393b5651242e7eb5-shah-faisal-mosque.jpg?fit=crop&w=960&h=416"
             alt="Third slide"
-            height="700px"
+            height="600px"
           />
 
           <Carousel.Caption>

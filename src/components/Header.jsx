@@ -3,14 +3,13 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 
 import Typography from '@material-ui/core/Typography'
-import InputBase from '@material-ui/core/InputBase'
 import { fade, makeStyles } from '@material-ui/core/styles'
-
-import SearchIcon from '@material-ui/icons/Search'
+import logo from '../static/WhatsApp Image 2019-10-08 at 2.07.00 PM.jpeg'
 import Button from '@material-ui/core/Button'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    fontSize: '25px'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -63,29 +62,17 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header() {
   const classes = useStyles()
-
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="black">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            Property360
+            <img src={logo} alt="logo" height="70px" width="200px" />
           </Typography>
-          <Button color="inherit">Rent</Button>
-          <Button color="inherit">Purchase</Button>
-          <Button color="inherit">Sell</Button>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
+          <div className="header-button">
+            <Button  > Rent     </Button>
+            <Button  > Purchase </Button>
+            <Button  > Sell     </Button>
           </div>
         </Toolbar>
       </AppBar>

@@ -10,7 +10,7 @@ const Footer = () => {
                 <p> 2019 Copyrights Reserved </p>
             </div>
             <div className="copy">
-                <p>Made with Love by </p>
+                <p>Made with ❤️</p>
             </div>
             <div className="copy">
                 <ul>
