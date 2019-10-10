@@ -1,18 +1,34 @@
 import React from 'react'
+import gql from 'graphql-tag.macro'
 import { DropdownButton, Dropdown } from 'react-bootstrap'
-const LBottom = () => {
+import { useQuery } from '../apollo'
+
+const LOCATIONS_QUERY = gql`
+  query LocationsQuery {
+    locations {
+      id
+      name
+    }
+  }
+`
+
+function LBottom() {
+  const { data, loading, error } = useQuery(LOCATIONS_QUERY)
+
+  if (error) {
+    throw error
+  }
+  const locations = data ? data.locations : []
+
   return (
     <div className="lbottom-wrapper">
       <p>Select Desired Area:</p>
       <DropdownButton id="dropdown-basic-button" title="Regions">
-        <Dropdown.Item href="#/action-1">Sector F</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Sector G</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Sector H</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Sector I</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Sector D</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">ChakShahzad</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">BharaKahu</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Bahria Town</Dropdown.Item>
+        {locations.map(location => (
+          <Dropdown.Item key={location.id} href="#/action-1">
+            {location.name}
+          </Dropdown.Item>
+        ))}
       </DropdownButton>
     </div>
   )

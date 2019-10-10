@@ -11,15 +11,15 @@ import Middle from './components/Middle.jsx';
 function App() {
   return (
     <div className="app-wrapper">
-      <Header  />
+      <Header />
       <Carouse />
-      <Middle  />
+      <Middle />
       <p></p>
       <h3 className="middle-text ">VR Platform </h3>
       <VR />
       <LBottom />
       <Contact />
-      <Footer  />
+      <Footer />
     </div>
   )
 }
