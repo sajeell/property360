@@ -7,7 +7,7 @@ import Footer from './components/Footer.jsx'
 import Carouse from './components/Carousel.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import LBottom from './components/Landing Bottom.jsx'
-import Middle from './components/Middle.jsx';
+import Middle from './components/Middle.jsx'
 function App() {
   return (
     <div className="app-wrapper">

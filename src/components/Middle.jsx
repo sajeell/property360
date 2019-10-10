@@ -1,5 +1,5 @@
-import React from 'react';
-import '../static/CompStyle.css';
+import React from 'react'
+import '../static/CompStyle.css'
 
 import Middle1 from './Middle1.jsx'
 import Middle2 from './Middle2.jsx'
@@ -28,9 +28,8 @@ const Middle = () => {
           </div>
         </div>
       </div>
-
     </div>
   )
 }
 
-export default Middle;
+export default Middle
