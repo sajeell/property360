@@ -76,6 +76,7 @@ const ASign = () => {
       },
     }).then(output => {
       console.log('mutated', output)
+      localStorage.setItem('token', output.data.login.token)
     })
   }
 
