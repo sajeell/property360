@@ -70,7 +70,7 @@ li {
 }
 
 @media only screen and (max-width: 843px) {
-  html{
+  html {
     font-size: 10px;
   }
   .header-wrapper {
@@ -159,29 +159,28 @@ li {
   padding: 0;
 }
 
-.middle-wrapper{
+.middle-wrapper {
   display: flex;
   justify-content: center;
 }
 
-.middle-row-item{
+.middle-row-item {
   padding: 2%;
 }
 
-
 @media only screen and (max-width: 530px) {
-  .middle-wrapper{
+  .middle-wrapper {
     display: flex;
     flex-direction: column;
   }
 }
 
-#middle-heading{
+#middle-heading {
   padding: 3%;
   margin-left: 40%;
 }
 
-h3{
+h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
 }
