@@ -13,6 +13,7 @@ import ASignUp from './Admin SignUp.jsx';
 // import Error from '../Error.jsx';
 import Button from '@material-ui/core/Button'
 const Admin = () => {
+<<<<<<< HEAD
     return (
         <div className="admin-wrapper">
             <Router>
@@ -43,3 +44,15 @@ const Admin = () => {
     )
 }
 export default Admin;
+=======
+  return (
+    <div className="admin-wrapper">
+      <AHeader />
+      <ASign />
+      {/* <ADrawer /> */}
+    </div>
+  )
+}
+
+export default Admin
+>>>>>>> 7bea311e12cf00e8a8bf0bf30d8a7f2098ae07e5
