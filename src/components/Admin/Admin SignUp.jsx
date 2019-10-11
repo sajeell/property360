@@ -41,9 +41,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const ASign = () => {
-
-
+const ASignUp = () => {
     const classes = useStyles();
     const [values, setValues] = React.useState({
         name: '',
@@ -56,7 +54,6 @@ const ASign = () => {
 
     return (
         <div className={classes.wrapper}>
-
 
             <div className={classes.container}>
                 <img className={classes.image} src={logo} alt="logo" height="70px" width="200px" />
@@ -80,15 +77,17 @@ const ASign = () => {
                     type="password"
                     autoComplete="current-password"
                 />
-                <Button variant="outlined" color="primary" className={classes.button}>
-                    Login
+                <div className={classes.row03}>
+                    <Button variant="outlined" color="primary" className={classes.button}>
+                        Sign Up
                 </Button>
 
+                </div>
             </div>
 
-
         </div>
+
     )
 }
 
-export default ASign
+export default ASignUp
