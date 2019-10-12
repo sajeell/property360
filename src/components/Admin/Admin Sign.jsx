@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import logo from '../../static/WhatsApp Image 2019-10-08 at 2.07.00 PM.jpeg'
 import TextField from '@material-ui/core/TextField'
-
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 const useStyles = makeStyles(theme => ({
     container: {
         display: 'flex',
@@ -82,32 +82,37 @@ const ASign = () => {
 
     return (
         <div className={classes.wrapper}>
-            <form className={classes.container} onSubmit={handleSubmit}>
-                <img className={classes.image} src={logo} alt="logo" height="70px" width="200px" />
-                <TextField
-                    id="outlined-name"
-                    label="Email"
-                    className={classes.textField}
-                    value={values.email}
-                    onChange={handleChange('email')}
-                    margin="normal"
-                    variant="outlined"
-                />
-                <TextField
-                    id="outlined-password-input"
-                    label="Password"
-                    className={classes.textField}
-                    value={values.password}
-                    onChange={handleChange('password')}
-                    margin="normal"
-                    variant="outlined"
-                    type="password"
-                    autoComplete="current-password"
-                />
-                <Button variant="outlined" color="primary" className={classes.button} type="submit">
-                    Login
-        </Button>
-            </form>
+            <Router>
+
+                <form className={classes.container} onSubmit={handleSubmit}>
+                    <img className={classes.image} src={logo} alt="logo" height="70px" width="200px" />
+                    <TextField
+                        id="outlined-name"
+                        label="Email"
+                        className={classes.textField}
+                        value={values.email}
+                        onChange={handleChange('email')}
+                        margin="normal"
+                        variant="outlined"
+                    />
+                    <TextField
+                        id="outlined-password-input"
+                        label="Password"
+                        className={classes.textField}
+                        value={values.password}
+                        onChange={handleChange('password')}
+                        margin="normal"
+                        variant="outlined"
+                        type="password"
+                        autoComplete="current-password"
+                    />
+                    <Link to="/adminportal">
+                        <Button variant="outlined" color="primary" className={classes.button} type="submit">
+                            Login
+                        </Button>
+                    </Link>
+                </form>
+            </Router>
         </div>
     )
 }
