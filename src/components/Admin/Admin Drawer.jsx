@@ -1,141 +1,44 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import AppBar from '@material-ui/core/AppBar'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Divider from '@material-ui/core/Divider'
-import Drawer from '@material-ui/core/Drawer'
-import Hidden from '@material-ui/core/Hidden'
-import IconButton from '@material-ui/core/IconButton'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
-import MailIcon from '@material-ui/icons/Mail'
-import MenuIcon from '@material-ui/icons/Menu'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import logo from '../../static/WhatsApp Image 2019-10-08 at 2.07.00 PM.jpeg'
-const drawerWidth = 240
-
+import '../../static/CompStyle.css'
 const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex'
-  },
-  drawer: {
-    [theme.breakpoints.up('sm')]: {
-      width: drawerWidth,
-      flexShrink: 0
-    }
-  },
-  appBar: {
-    marginLeft: drawerWidth,
-    [theme.breakpoints.up('sm')]: {
-      width: `calc(100% - ${drawerWidth}px)`
-    }
+    flexGrow: 1,
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
-      display: 'none'
-    }
   },
-  toolbar: theme.mixins.toolbar,
-  drawerPaper: {
-    width: drawerWidth
-  },
-  content: {
+  title: {
     flexGrow: 1,
-    padding: theme.spacing(3)
-  }
-}))
+  },
+}));
 
-function ADrawer(props) {
-  const { container } = props
-  const classes = useStyles()
-  const theme = useTheme()
-  const [mobileOpen, setMobileOpen] = React.useState(false)
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen)
-  }
-
-  const drawer = (
-    <div>
-      <div className={classes.toolbar} />
-      <Divider />
-      <List>
-        {['Area', ' Property '].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-    </div>
-  )
-
+const ADrawer = () => {
+  const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <AppBar position="fixed" color="black" className={classes.appBar}>
-        <Toolbar>
-          <IconButton aria-label="open drawer" edge="start" onClick={handleDrawerToggle} className={classes.menuButton}>
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap>
-            <img src={logo} alt="logo" height="70px" width="200px" />
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <nav className={classes.drawer} aria-label="mailbox folders">
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden smUp implementation="css">
-          <Drawer
-            container={container}
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper
-            }}
-            ModalProps={{
-              keepMounted: true // Better open performance on mobile.
-            }}
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-        <Hidden xsDown implementation="css">
-          <Drawer
-            classes={{
-              paper: classes.drawerPaper
-            }}
-            variant="permanent"
-            open
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-      </nav>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Typography paragraph>Error 404! Not Found Yet!</Typography>
-        <Typography paragraph>Error 404! Not Found Yet!</Typography>
-      </main>
+    <div className="admin-drawer-wrapper">
+
+      <div className={classes.root}>
+        <AppBar position="static" color="black">
+          <Toolbar>
+            <Typography variant="h6" className={classes.title}>
+              <img src={logo} alt="logo" height="70px" width="200px" />
+            </Typography>
+            <Button color="inherit">Add</Button>
+            <Button color="inherit">Edit</Button>
+            <Button color="inherit">Modify</Button>
+            <Button color="inherit">Profile</Button>
+          </Toolbar>
+        </AppBar>
+      </div>
     </div>
   )
-}
-
-ADrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  container: PropTypes.instanceOf(typeof Element === 'undefined' ? Object : Element)
 }
 
 export default ADrawer
