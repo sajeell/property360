@@ -54,8 +54,6 @@ const ASign = () => {
 
     return (
         <div className={classes.wrapper}>
-
-
             <div className={classes.container}>
                 <img className={classes.image} src={logo} alt="logo" height="70px" width="200px" />
                 <TextField

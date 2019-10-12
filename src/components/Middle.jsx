@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 import React from 'react';
 import '../static/CompStyle.css';
-=======
-import React from 'react'
-import '../static/CompStyle.css'
-
->>>>>>> 5373198b4f6c6881692d6ec024feba74a1c8743a
 import Middle1 from './Middle1.jsx'
 import Middle2 from './Middle2.jsx'
 import Middle3 from './Middle3.jsx'
