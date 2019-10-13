@@ -9,22 +9,22 @@ import '../../static/CompStyle.css'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    fontSize: '25px'
+    fontSize: '25px',
   },
   title: {
     flexGrow: 1,
     display: 'none',
     [theme.breakpoints.up('sm')]: {
-      display: 'block'
-    }
-  }
+      display: 'block',
+    },
+  },
 }))
 
 export default function AdminHeader() {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="black">
+      <AppBar position="static">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
             <img src={logo} alt="logo" height="70px" width="200px" />

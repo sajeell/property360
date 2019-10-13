@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    fontSize: '25px'
+    fontSize: '25px',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -64,15 +64,15 @@ export default function Header() {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="black">
+      <AppBar position="static">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
             <img src={logo} alt="logo" height="70px" width="200px" />
           </Typography>
           <div className="header-button">
-            <Button  > Rent     </Button>
-            <Button  > Purchase </Button>
-            <Button  > Sell     </Button>
+            <Button> Rent </Button>
+            <Button> Purchase </Button>
+            <Button> Sell </Button>
           </div>
         </Toolbar>
       </AppBar>

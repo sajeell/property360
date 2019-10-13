@@ -1,9 +1,9 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
 import logo from '../../static/WhatsApp Image 2019-10-08 at 2.07.00 PM.jpeg'
 import '../../static/CompStyle.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
@@ -22,15 +22,16 @@ const useStyles = makeStyles(theme => ({
   title: {
     flexGrow: 1,
   },
-}));
+}))
 
 const ADrawer = () => {
-  const classes = useStyles();
+  const classes = useStyles()
+
   return (
     <div className="admin-drawer-wrapper">
       <Router>
         <div className={classes.root}>
-          <AppBar position="static" color="black">
+          <AppBar position="static">
             <Toolbar>
               <Typography variant="h6" className={classes.title}>
                 <img src={logo} alt="logo" height="70px" width="200px" />
@@ -59,9 +60,7 @@ const ADrawer = () => {
           <Route exact path="/adminmodify">
             <Modify />
           </Route>
-
         </Switch>
-
       </Router>
     </div>
   )

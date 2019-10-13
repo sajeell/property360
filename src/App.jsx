@@ -15,7 +15,6 @@
 //     <div className="app-wrapper">
 //       <Router>
 
-
 //         <Switch>
 //           <Route exact path="/">
 //             <Header />
@@ -33,7 +32,6 @@
 //             <Admin />
 //           </Route>
 //         </Switch>
-
 
 //       </Router>
 //     </div>
@@ -55,7 +53,7 @@ function App() {
           {/* <Route exact path="/">
             <Landing />
           </Route> */}
-          <Route exact path="/">
+          <Route path="/">
             <Admin />
           </Route>
         </Switch>
