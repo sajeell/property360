@@ -8,9 +8,9 @@ import logo from '../../static/WhatsApp Image 2019-10-08 at 2.07.00 PM.jpeg'
 import '../../static/CompStyle.css'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
-import Add from './Admin Add.jsx'
-import Delete from './Admin Delete.jsx'
-import Modify from './Admin Modify.jsx'
+import Add from './AdminAdd.jsx'
+import Delete from './AdminDelete.jsx'
+import Modify from './AdminModify.jsx'
 
 const useStyles = makeStyles(theme => ({
   root: {

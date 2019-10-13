@@ -1,43 +1,33 @@
 import React from 'react'
 import '../../static/CompStyle.css'
-import ASign from './Admin Sign.jsx'
-// import ADrawer from './Admin Drawer.jsx'
-// import AHeader from './Admin Header.jsx'
-// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import ADrawer from './Admin Drawer'
-// import Error from '../Error.jsx';
+import ASign from './AdminSign.jsx'
+import ADrawer from './AdminDrawer.jsx'
+import AHeader from './AdminHeader.jsx'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Error from '../Error.jsx'
 const Admin = () => {
   return (
     <div className="admin-wrapper">
-      {/* <Router>
+      <Router>
         <Route exact path="/admin">
           <ASign />
         </Route>
-        <Route exact path="/adminportal">
-        </Route>
-      </Router> */}
+        <Route exact path="/adminportal"></Route>
 
-      <ADrawer />
+        <ADrawer />
 
-      { /* 
         <ADrawer />
         <AHeader />
         <Switch>
-          <Route exact path="/">
-            <ASign />
-          </Route>
-          <Route sensitive path="/asign">
-            
-          </Route>
+          <Route sensitive path="/asign"></Route>
           <Route component={Error} />
 
-          {/* 
-                    <Route path="/">
-                    <Error />
-                </Route> 
-        </Switch>*/}
-
-    </div >
+          <Route path="/">
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   )
 }
 export default Admin

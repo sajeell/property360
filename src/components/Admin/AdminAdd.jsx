@@ -5,8 +5,8 @@ import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import Button from '@material-ui/core/Button'
-import Upload from './Admin Upload.jsx'
-import Area from './Admin Area.jsx'
+import Upload from './AdminUpload.jsx'
+import Area from './AdminArea.jsx'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 const useStyles = makeStyles(theme => ({
   wrapper: {
