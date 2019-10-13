@@ -1,13 +1,30 @@
 import React from 'react'
+import gql from 'graphql-tag.macro'
 import { makeStyles } from '@material-ui/core/styles'
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import Button from '@material-ui/core/Button'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+
 import Upload from './AdminUpload.jsx'
 import Area from './AdminArea.jsx'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { useQuery } from '../../apollo'
+
+const ADMIN_ADD_QUERY = gql`
+  query AdminAddQuery {
+    listingTypes {
+      id
+      name
+    }
+    locations {
+      id
+      name
+    }
+  }
+`
+
 const useStyles = makeStyles(theme => ({
   wrapper: {
     display: 'flex',
@@ -30,7 +47,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function Add() {
+export default function AdminAdd() {
   const classes = useStyles()
   const [area, setArea] = React.useState('')
   const [commerce, setCommerce] = React.useState('')
@@ -38,6 +55,14 @@ export default function Add() {
   const [openArea, setOpenArea] = React.useState(false)
   const [openCommerce, setOpenCommerce] = React.useState(false)
   const [openType, setOpenType] = React.useState(false)
+
+  const { data, loading, error } = useQuery(ADMIN_ADD_QUERY)
+  if (error) {
+    throw error
+  }
+
+  const locations = data ? data.locations : []
+  const listingTypes = data ? data.listingTypes : []
 
   const handleChangeArea = event => {
     setArea(event.target.value)
@@ -76,9 +101,6 @@ export default function Add() {
     <div className={classes.wrapper}>
       <Router>
         <form autoComplete="off">
-          {/* <Button className={classes.button} onClick={handleOpen}>
-                Open the select
-            </Button> */}
           <FormControl className={classes.formControl}>
             <InputLabel htmlFor="demo-controlled-open-select">Choose Area:</InputLabel>
             <Select
@@ -95,17 +117,16 @@ export default function Add() {
               <MenuItem value="">
                 <em>None</em>
               </MenuItem>
-              <MenuItem value={'G-15'}>G-15</MenuItem>
-              <MenuItem value={'F-15'}>F-15</MenuItem>
-              <MenuItem value={'F-16'}>F-16</MenuItem>
+              {locations.map(location => (
+                <MenuItem key={location.id} href="#/action-1">
+                  {location.name}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
         </form>
         <br />
         <form autoComplete="off">
-          {/* <Button className={classes.button} onClick={handleOpen}>
-                Open the select
-            </Button> */}
           <FormControl className={classes.formControl}>
             <InputLabel htmlFor="demo-controlled-open-select">Choose Commerce:</InputLabel>
             <Select
@@ -129,10 +150,6 @@ export default function Add() {
         </form>
         <br />
         <form autoComplete="off">
-          {/* <Button className={classes.button} onClick={handleOpen}>
-                Open the select
-            </Button> */}
-
           <FormControl className={classes.formControl}>
             <InputLabel htmlFor="demo-controlled-open-select">Choose Type:</InputLabel>
             <Select
@@ -149,10 +166,11 @@ export default function Add() {
               <MenuItem value="">
                 <em>None</em>
               </MenuItem>
-              <MenuItem value={'appartment'}>Appartment</MenuItem>
-              <MenuItem value={'house'}>House</MenuItem>
-              <MenuItem value={'shop'}>Shop</MenuItem>
-              <MenuItem value={'plot'}>Plot</MenuItem>
+              {listingTypes.map(listingType => (
+                <MenuItem key={listingType.id} href="#/action-1">
+                  {listingType.name}
+                </MenuItem>
+              ))}
             </Select>
           </FormControl>
           <Upload />
@@ -160,11 +178,6 @@ export default function Add() {
             Want to increase coverage area? <Link to="/addarea">Click Here!</Link>
           </p>
           <InputLabel>Description:</InputLabel>
-          <textarea
-            style={{
-              resize: 'none',
-            }}
-          ></textarea>
           <Button variant="outlined" color="primary" className={classes.button} type="submit">
             Add Property
           </Button>
