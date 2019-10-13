@@ -160,7 +160,11 @@ export default function Add() {
             Want to increase coverage area? <Link to="/addarea">Click Here!</Link>
           </p>
           <InputLabel>Description:</InputLabel>
-          <input type="text" />
+          <textarea
+            style={{
+              resize: 'none',
+            }}
+          ></textarea>
           <Button variant="outlined" color="primary" className={classes.button} type="submit">
             Add Property
           </Button>
