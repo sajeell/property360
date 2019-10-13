@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import '../../static/CompStyle.css'
-import AdminSign from './AdminSign.jsx'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import Error from '../Error.jsx'
 
 import * as authService from '../../services/auth'
+import AdminSign from './AdminSign.jsx'
+import AdminRouter from './AdminRouter'
+
+import '../../static/CompStyle.css'
 
 const Admin = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(authService.hasUserToken())
@@ -13,10 +14,7 @@ const Admin = () => {
     <div className="admin-wrapper">
       <Switch>
         {isLoggedIn ? (
-          <>
-            <Route sensitive path="/asign"></Route>
-            <Route path="*" component={Error} />
-          </>
+          <AdminRouter />
         ) : (
           <>
             <Route path="/admin/login" render={() => <AdminSign onLogin={() => setIsLoggedIn(true)} />} />
