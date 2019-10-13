@@ -7,7 +7,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import logo from '../../static/WhatsApp Image 2019-10-08 at 2.07.00 PM.jpeg'
 import TextField from '@material-ui/core/TextField'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect } from 'react-router-dom'
+import * as authService from '../../services/auth'
+
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
@@ -56,12 +58,13 @@ const LOGIN_MUTATION = gql`
   }
 `
 
-const ASign = () => {
+function AdminSign({ onLogin }) {
   const classes = useStyles()
   const [values, setValues] = React.useState({
     email: '',
     password: '',
   })
+  const [shouldRedirect, setShouldRedirect] = React.useState(false)
   const [mutate] = useMutation(LOGIN_MUTATION)
 
   const handleChange = name => event => {
@@ -75,13 +78,15 @@ const ASign = () => {
         input: values,
       },
     }).then(output => {
-      console.log('mutated', output)
-      localStorage.setItem('token', output.data.login.token)
+      authService.setUserToken(output.data.login.token)
+      setShouldRedirect(true)
+      onLogin()
     })
   }
 
   return (
     <div className={classes.wrapper}>
+      {shouldRedirect ? <Redirect to="/admin" /> : null}
       <Router>
         <form className={classes.container} onSubmit={handleSubmit}>
           <img className={classes.image} src={logo} alt="logo" height="70px" width="200px" />
@@ -105,15 +110,13 @@ const ASign = () => {
             type="password"
             autoComplete="current-password"
           />
-          <Link to="/adminportal">
-            <Button variant="outlined" color="primary" className={classes.button} type="submit">
-              Login
-            </Button>
-          </Link>
+          <Button variant="outlined" color="primary" className={classes.button} type="submit">
+            Login
+          </Button>
         </form>
       </Router>
     </div>
   )
 }
 
-export default ASign
+export default AdminSign
