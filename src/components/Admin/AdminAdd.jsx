@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 import Upload from './AdminUpload.jsx'
 import Area from './AdminArea.jsx'
-import { useQuery } from '../../apollo'
+import { useQuery, useMutation } from '../../apollo'
 
 const ADMIN_ADD_QUERY = gql`
   query AdminAddQuery {
@@ -21,6 +21,22 @@ const ADMIN_ADD_QUERY = gql`
     locations {
       id
       name
+    }
+  }
+`
+
+const ADD_LISTING_MUTATION = gql`
+  mutation($input: AddListingMutationInput!) {
+    addListing(input: $input) {
+      listing {
+        id
+        location {
+          name
+        }
+      }
+      viewer {
+        name
+      }
     }
   }
 `
@@ -49,13 +65,15 @@ const useStyles = makeStyles(theme => ({
 
 export default function AdminAdd() {
   const classes = useStyles()
-  const [area, setArea] = React.useState('')
+  const [location, setLocation] = React.useState('')
   const [commerce, setCommerce] = React.useState('')
   const [type, setType] = React.useState('')
-  const [openArea, setOpenArea] = React.useState(false)
+  const [openLocation, setOpenLocation] = React.useState(false)
   const [openCommerce, setOpenCommerce] = React.useState(false)
   const [openType, setOpenType] = React.useState(false)
+  const [description, setDescription] = React.useState('')
 
+  const [mutate] = useMutation(ADD_LISTING_MUTATION)
   const { data, loading, error } = useQuery(ADMIN_ADD_QUERY)
   if (error) {
     throw error
@@ -64,8 +82,31 @@ export default function AdminAdd() {
   const locations = data ? data.locations : []
   const listingTypes = data ? data.listingTypes : []
 
-  const handleChangeArea = event => {
-    setArea(event.target.value)
+  function handleFormSubmit(e) {
+    e.preventDefault()
+    const values = {
+      locationId: location,
+      listingTypeId: type,
+      commerce,
+      description,
+    }
+
+    console.log('values', values)
+
+    mutate({
+      variables: {
+        input: values,
+      },
+    }).then(output => {
+      console.log(output)
+    })
+  }
+  function handleDescriptionChange(e) {
+    setDescription(e.target.value)
+  }
+
+  const handleChangeLocation = event => {
+    setLocation(event.target.value)
   }
   const handleChangeCommerce = event => {
     setCommerce(event.target.value)
@@ -74,12 +115,12 @@ export default function AdminAdd() {
     setType(event.target.value)
   }
 
-  const handleCloseArea = () => {
-    setOpenArea(false)
+  const handleCloseLocation = () => {
+    setOpenLocation(false)
   }
 
-  const handleOpenArea = () => {
-    setOpenArea(true)
+  const handleOpenLocation = () => {
+    setOpenLocation(true)
   }
 
   const handleCloseCommerce = () => {
@@ -97,20 +138,21 @@ export default function AdminAdd() {
   const handleOpenType = () => {
     setOpenType(true)
   }
+
   return (
     <div className={classes.wrapper}>
       <Router>
-        <form autoComplete="off">
+        <form autoComplete="off" method="post" onSubmit={handleFormSubmit}>
           <FormControl className={classes.formControl}>
             <InputLabel htmlFor="demo-controlled-open-select">Choose Location:</InputLabel>
             <Select
-              open={openArea}
-              onClose={handleCloseArea}
-              onOpen={handleOpenArea}
-              value={area}
-              onChange={handleChangeArea}
+              open={openLocation}
+              onClose={handleCloseLocation}
+              onOpen={handleOpenLocation}
+              value={location}
+              onChange={handleChangeLocation}
               inputProps={{
-                name: 'area',
+                name: 'location',
                 id: 'demo-controlled-open-select',
               }}
             >
@@ -118,15 +160,12 @@ export default function AdminAdd() {
                 <em>None</em>
               </MenuItem>
               {locations.map(location => (
-                <MenuItem key={location.id} href="#/action-1">
+                <MenuItem key={location.id} value={location.id} href="#/action-1">
                   {location.name}
                 </MenuItem>
               ))}
             </Select>
           </FormControl>
-        </form>
-        <br />
-        <form autoComplete="off">
           <FormControl className={classes.formControl}>
             <InputLabel htmlFor="demo-controlled-open-select">Choose Commerce:</InputLabel>
             <Select
@@ -147,9 +186,6 @@ export default function AdminAdd() {
               <MenuItem value={'sale'}>Sale</MenuItem>
             </Select>
           </FormControl>
-        </form>
-        <br />
-        <form autoComplete="off">
           <FormControl className={classes.formControl}>
             <InputLabel htmlFor="demo-controlled-open-select">Choose Type:</InputLabel>
             <Select
@@ -167,7 +203,7 @@ export default function AdminAdd() {
                 <em>None</em>
               </MenuItem>
               {listingTypes.map(listingType => (
-                <MenuItem key={listingType.id} href="#/action-1">
+                <MenuItem key={listingType.id} value={listingType.id} href="#/action-1">
                   {listingType.name}
                 </MenuItem>
               ))}
@@ -175,10 +211,10 @@ export default function AdminAdd() {
           </FormControl>
           <Upload />
           <p className={classes.text}>
-            Want to increase coverage area? <Link to="/addarea">Click Here!</Link>
+            Want to increase coverage location? <Link to="/addarea">Click Here!</Link>
           </p>
           <InputLabel>Description:</InputLabel>
-          <textarea style={{ resize: 'none' }}></textarea>
+          <textarea style={{ resize: 'none' }} value={description} onChange={handleDescriptionChange}></textarea>
           <Button variant="outlined" color="primary" className={classes.button} type="submit">
             Add Property
           </Button>
