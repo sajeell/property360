@@ -102,7 +102,7 @@ export default function AdminAdd() {
       <Router>
         <form autoComplete="off">
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="demo-controlled-open-select">Choose Area:</InputLabel>
+            <InputLabel htmlFor="demo-controlled-open-select">Choose Location:</InputLabel>
             <Select
               open={openArea}
               onClose={handleCloseArea}
@@ -178,6 +178,7 @@ export default function AdminAdd() {
             Want to increase coverage area? <Link to="/addarea">Click Here!</Link>
           </p>
           <InputLabel>Description:</InputLabel>
+          <textarea style={{ resize: 'none' }}></textarea>
           <Button variant="outlined" color="primary" className={classes.button} type="submit">
             Add Property
           </Button>
