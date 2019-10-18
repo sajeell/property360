@@ -50,9 +50,13 @@
 
 .footer-wrapper {
     list-style: none;
-    font-size: 9px;
+    font-size: 12px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.footer-title:hover {
+    color: red;
 }
 
 .footer-title {
@@ -205,8 +209,7 @@ h3 {
     font-weight: bolder;
 }
 
-
-/* .popup-add {
+.popup-add {
     width: 300px;
     justify-content: center;
     display: flex;
@@ -225,4 +228,4 @@ h3 {
 .pop-item-01 img {
     margin-left: 25px;
     margin-top: 20px;
-} */
+}
