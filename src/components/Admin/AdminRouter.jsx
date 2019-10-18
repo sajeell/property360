@@ -12,6 +12,7 @@ import '../../static/CompStyle.css'
 import Add from './AdminAdd.jsx'
 import Delete from './AdminDelete.jsx'
 import Modify from './AdminModify.jsx'
+import Profile from './AdminProfile'
 
 import ErrorPage from '../ErrorPage.jsx'
 
@@ -49,7 +50,9 @@ const AdminRouter = () => {
             <Link to="/admin/modify">
               <Button color="inherit">Modify</Button>
             </Link>
-            <Button color="inherit">Profile</Button>
+            <Link to="/admin/profile" color="inherit">
+              Profile
+            </Link>
           </Toolbar>
         </AppBar>
       </div>
@@ -66,6 +69,9 @@ const AdminRouter = () => {
         </Route>
         <Route path="/admin/modify">
           <Modify />
+        </Route>
+        <Route path="/admin/profile">
+          <Profile />
         </Route>
         <Route path="*" component={ErrorPage} />
       </Switch>
