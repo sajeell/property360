@@ -1,5 +1,5 @@
-import React from "react";
-import "../../static/CompStyle.css"; // Importing CSS file
+import React from 'react'
+import '../../static/CompStyle.css' // Importing CSS file
 
 export default function AppartmentPop() {
   return (
@@ -7,10 +7,10 @@ export default function AppartmentPop() {
       <div className="pop-item-01">
         <img
           src={
-            "https://www.totalparco.com.pk/sites/g/files/wompnd651/f/styles/paragraph_media_960/public/atoms/image/img_0463_1_0.jpg?itok=_IH5uICP"
+            'https://www.totalparco.com.pk/sites/g/files/wompnd651/f/styles/paragraph_media_960/public/atoms/image/img_0463_1_0.jpg?itok=_IH5uICP'
           }
-          height={"250"}
-          width={"250"}
+          height={'250'}
+          width={'250'}
           alt="Plots not found"
         />
         <p>Type: Appartment</p>
@@ -24,5 +24,5 @@ export default function AppartmentPop() {
         <p>Call for further details</p>
       </div>
     </div>
-  );
+  )
 }
