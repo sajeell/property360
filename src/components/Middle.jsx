@@ -27,7 +27,7 @@ const Middle = props => {
             <Modal isOpen={modal} toggle={toggle} className={className}>
               <ModalHeader toggle={toggle}>Appartments</ModalHeader>
               <ModalBody>
-                <AppartmentPop />
+                <HousePop />
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={toggle}>
@@ -36,7 +36,7 @@ const Middle = props => {
               </ModalFooter>
             </Modal>
           </div>
-          <div className="middle-row-item">
+          {/* <div className="middle-row-item">
             <Button color="" onClick={toggle}>
               <Middle2 />
             </Button>
@@ -84,11 +84,11 @@ const Middle = props => {
                   Cancel
                 </Button>
               </ModalFooter>
-            </Modal>
-          </div>
+            </Modal> */}
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 
