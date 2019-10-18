@@ -13,7 +13,7 @@ const LOCATIONS_QUERY = gql`
 `
 
 function LBottom() {
-  const { data, loading, error } = useQuery(LOCATIONS_QUERY)
+  const { data, error } = useQuery(LOCATIONS_QUERY)
 
   if (error) {
     throw error

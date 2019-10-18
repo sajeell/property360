@@ -11,7 +11,6 @@ const images = [
     width: '100%',
   },
 ]
-
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -23,8 +22,7 @@ const useStyles = makeStyles(theme => ({
   image: {
     padding: '1em',
     position: 'relative',
-    height: 250,
-    width: 250,
+    height: 220,
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,
@@ -92,7 +90,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function Middle4() {
   const classes = useStyles()
-
   return (
     <div className="middle4-wrapper">
       <div className={classes.root}>

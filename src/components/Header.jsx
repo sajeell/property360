@@ -64,16 +64,12 @@ export default function Header() {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="default">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
             <img src={logo} alt="logo" height="70px" width="200px" />
           </Typography>
-          <div className="header-button">
-            <Button> Rent </Button>
-            <Button> Purchase </Button>
-            <Button> Sell </Button>
-          </div>
+          
         </Toolbar>
       </AppBar>
     </div>

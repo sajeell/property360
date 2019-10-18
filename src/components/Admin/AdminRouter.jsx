@@ -32,8 +32,10 @@ const AdminRouter = () => {
 
   return (
     <div className="admin-drawer-wrapper">
+      <Router>
+
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="static" color="default">
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
               <img src={logo} alt="logo" height="70px" width="200px" />
@@ -67,6 +69,7 @@ const AdminRouter = () => {
         </Route>
         <Route path="*" component={ErrorPage} />
       </Switch>
+    </Router>
     </div>
   )
 }

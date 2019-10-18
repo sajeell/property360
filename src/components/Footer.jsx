@@ -1,26 +1,18 @@
-import React from 'react'
-import '../static/CompStyle.css'
+import React from "react";
+
 const Footer = () => {
   return (
     <div className="footer-wrapper">
-      <div className="copy">
-        <p>Property360 </p>
-      </div>
-      <div className="copy">
-        <p> 2019 Copyrights Reserved </p>
-      </div>
-      <div className="copy">
-        <p>Made with Love by </p>
-      </div>
-      <div className="copy">
-        <ul>
-          <li className="fab fa-facebook"></li>
-          <li className="fab fa-instagram"></li>
-          <li className="fab fa-twitter"></li>
-        </ul>
+      <div className="footer-col-01">
+        <div className="footer-title">
+          <p>PROPERTY360</p>
+        </div>
+        ABOUT US
+        <br />
+        CAREERS
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

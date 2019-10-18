@@ -40,12 +40,7 @@ const Contact = () => {
         </button>
       </form>
 
-      <div>
-        <img
-          src="http://images.clipartpanda.com/phone-icon-vector-11954230141737421095rickvanderzwet_Phone.svg.med.png"
-          className="contact-logo"
-        ></img>
-      </div>
+     
     </div>
   )
 }
