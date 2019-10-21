@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 
 import TextField from '@material-ui/core/TextField'
-import { BrowserRouter as Router,  Link } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
@@ -74,30 +74,28 @@ function Area() {
       },
     }).then(output => {
       console.log('mutated', output)
-      localStorage.setItem('token', output.data.login.token)
     })
   }
 
   return (
     <div className="admin-area-wrapper">
       <Router>
-
-      <TextField
-        id="outlined-name"
-        label="Area"
-        className={classes.textField}
-        value={values.area}
-        onChange={handleChange('area')}
-        margin="normal"
-        variant="outlined"
+        <TextField
+          id="outlined-name"
+          label="Area"
+          className={classes.textField}
+          value={values.area}
+          onChange={handleChange('area')}
+          margin="normal"
+          variant="outlined"
         />
 
-      <Link to="/admin">
-        <Button variant="outlined" color="primary" className={classes.button} type="submit">
-          Add Area
-        </Button>
-      </Link>
-    </Router>
+        <Link to="/admin">
+          <Button variant="outlined" color="primary" className={classes.button} type="submit">
+            Add Area
+          </Button>
+        </Link>
+      </Router>
     </div>
   )
 }
