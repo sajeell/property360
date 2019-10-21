@@ -8,7 +8,7 @@ import Select from '@material-ui/core/Select'
 import Button from '@material-ui/core/Button'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Upload from './AdminUpload.jsx'
-import Area from './AdminArea.jsx'
+import AddLocation from './AdminAddLocation.jsx'
 import { useQuery, useMutation } from '../../apollo'
 
 const ADMIN_ADD_QUERY = gql`
@@ -220,7 +220,7 @@ export default function AdminAdd() {
         </form>
         <Switch>
           <Route path="/addarea">
-            <Area />
+            <AddLocation />
           </Route>
         </Switch>
       </Router>

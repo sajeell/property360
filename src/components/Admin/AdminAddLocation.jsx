@@ -3,11 +3,24 @@ import gql from 'graphql-tag.macro'
 import { useMutation } from '../../apollo'
 
 import '../../static/CompStyle.css'
+
 import { makeStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
-
 import TextField from '@material-ui/core/TextField'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+
+const ADD_LOCATION_MUTATION = gql`
+  mutation addLocation($input: AddLocationMutationInput!) {
+    addLocation(input: $input) {
+      location {
+        name
+        id
+      }
+      viewer {
+        id
+      }
+    }
+  }
+`
 const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
@@ -43,30 +56,18 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const LOGIN_MUTATION = gql`
-  mutation LoginMutation($input: LoginMutationInput!) {
-    login(input: $input) {
-      viewer {
-        id
-        name
-        email
-      }
-      token
-    }
-  }
-`
-function Area() {
+function AddLocation() {
   const classes = useStyles()
   const [values, setValues] = React.useState({
-    area: '',
+    name: '',
   })
-  const [mutate] = useMutation(LOGIN_MUTATION)
+  const [mutate] = useMutation(ADD_LOCATION_MUTATION)
 
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value })
   }
 
-  function handleSubmit(event) {
+  function handleFormSubmit(event) {
     event.preventDefault()
     mutate({
       variables: {
@@ -78,25 +79,22 @@ function Area() {
   }
 
   return (
-    <div className="admin-area-wrapper">
-      <Router>
+    <div className="admin-location-wrapper">
+      <form action="" onSubmit={handleFormSubmit}>
         <TextField
           id="outlined-name"
-          label="Area"
+          label="Location"
           className={classes.textField}
-          value={values.area}
-          onChange={handleChange('area')}
+          value={values.name}
+          onChange={handleChange('name')}
           margin="normal"
           variant="outlined"
         />
-
-        <Link to="/admin">
-          <Button variant="outlined" color="primary" className={classes.button} type="submit">
-            Add Area
-          </Button>
-        </Link>
-      </Router>
+        <Button variant="outlined" color="primary" className={classes.button} type="submit">
+          Add Location
+        </Button>
+      </form>
     </div>
   )
 }
-export default Area
+export default AddLocation
