@@ -210,7 +210,7 @@ export default function AdminAdd() {
           </FormControl>
           <Upload />
           <p className={classes.text}>
-            Want to increase coverage location? <Link to="/addarea">Click Here!</Link>
+            Want to increase coverage location? <Link to="#">Click Here!</Link>
           </p>
           <InputLabel>Description:</InputLabel>
           <textarea style={{ resize: 'none' }} value={description} onChange={handleDescriptionChange}></textarea>
@@ -218,11 +218,7 @@ export default function AdminAdd() {
             Add Property
           </Button>
         </form>
-        <Switch>
-          <Route path="/addarea">
-            <AddLocation />
-          </Route>
-        </Switch>
+        <AddLocation />
       </Router>
     </div>
   )
