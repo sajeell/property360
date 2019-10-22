@@ -1,25 +1,22 @@
-import React, { useState } from "react";
-import "../static/CompStyle.css";
-import Middle1 from "./Middle1.jsx";
-import Middle2 from "./Middle2.jsx";
-import Middle3 from "./Middle3.jsx";
-import Middle4 from "./Middle4.jsx";
-import ShopPop from "./Popups/ShopPop.jsx";
-import PlotPop from "./Popups/PlotPop.jsx";
-import ApartmentPop from "./Popups/ApartmentPop.jsx";
-import HousePop from "./Popups/HousePop.jsx";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import React, { useState } from 'react'
+import '../static/CompStyle.css'
+import Middle1 from './Middle1.jsx'
+import Middle2 from './Middle2.jsx'
+import Middle3 from './Middle3.jsx'
+import Middle4 from './Middle4.jsx'
+import LocationPopup from './Popups/LocationPopup'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 const Middle = props => {
-  const { className } = props;
+  const { className } = props
 
-  const [shopModal, setShopModal] = useState(false);
-  const [houseModal, setHouseModal] = useState(false);
-  const [appartModal, setAppartModal] = useState(false);
-  const [plotModal, setPlotModal] = useState(false);
-  const shopToggle = () => setShopModal(!shopModal);
-  const houseToggle = () => setHouseModal(!houseModal);
-  const appartToggle = () => setAppartModal(!appartModal);
-  const plotToggle = () => setPlotModal(!plotModal);
+  const [shopModal, setShopModal] = useState(false)
+  const [houseModal, setHouseModal] = useState(false)
+  const [appartModal, setAppartModal] = useState(false)
+  const [plotModal, setPlotModal] = useState(false)
+  const shopToggle = () => setShopModal(!shopModal)
+  const houseToggle = () => setHouseModal(!houseModal)
+  const appartToggle = () => setAppartModal(!appartModal)
+  const plotToggle = () => setPlotModal(!plotModal)
   return (
     <div>
       <h3 id="middle-heading">We deal in all kinds of:</h3>
@@ -29,14 +26,10 @@ const Middle = props => {
             <Button color="" onClick={appartToggle}>
               <Middle1 />
             </Button>
-            <Modal
-              isOpen={appartModal}
-              toggle={appartToggle}
-              className={className}
-            >
+            <Modal isOpen={appartModal} toggle={appartToggle} className={className}>
               <ModalHeader toggle={appartToggle}>Apartments</ModalHeader>
               <ModalBody>
-                <ApartmentPop />
+                <LocationPopup listingTypeId="1" />
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={appartToggle}>
@@ -49,14 +42,10 @@ const Middle = props => {
             <Button color="" onClick={houseToggle}>
               <Middle2 />
             </Button>
-            <Modal
-              isOpen={houseModal}
-              toggle={houseToggle}
-              className={className}
-            >
+            <Modal isOpen={houseModal} toggle={houseToggle} className={className}>
               <ModalHeader toggle={houseToggle}>House:</ModalHeader>
               <ModalBody>
-                <HousePop />
+                <LocationPopup listingTypeId="2" />
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={houseToggle}>
@@ -74,7 +63,7 @@ const Middle = props => {
             <Modal isOpen={plotModal} toggle={plotToggle} className={className}>
               <ModalHeader toggle={plotToggle}>Plots:</ModalHeader>
               <ModalBody>
-                <PlotPop />
+                <LocationPopup listingTypeId="4" />
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={plotToggle}>
@@ -90,7 +79,7 @@ const Middle = props => {
             <Modal isOpen={shopModal} toggle={shopToggle} className={className}>
               <ModalHeader toggle={shopToggle}>Shop:</ModalHeader>
               <ModalBody>
-                <ShopPop />
+                <LocationPopup listingTypeId="3" />
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={shopToggle}>
@@ -102,7 +91,7 @@ const Middle = props => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Middle;
+export default Middle
