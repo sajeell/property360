@@ -6,7 +6,7 @@ import '../static/CompStyle.css'
 const images = [
   {
     url: 'https://i2.au.reastatic.net/1110x535/c93989d1c261b40e1397a9ea791ad48691ab08e98b0274d7d689a68137de394f/image.jpg',
-    title: 'Appartments',
+    title: 'Apartments',
     width: '100%',
   },
 ]
@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     padding: '1em',
     position: 'relative',
     height: 220,
-    
+
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,
