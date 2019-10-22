@@ -6,7 +6,7 @@ import Middle3 from "./Middle3.jsx";
 import Middle4 from "./Middle4.jsx";
 import ShopPop from "./Popups/ShopPop.jsx";
 import PlotPop from "./Popups/PlotPop.jsx";
-import AppartmentPop from "./Popups/AppartmentPop.jsx";
+import ApartmentPop from "./Popups/ApartmentPop.jsx";
 import HousePop from "./Popups/HousePop.jsx";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 const Middle = props => {
@@ -34,9 +34,9 @@ const Middle = props => {
               toggle={appartToggle}
               className={className}
             >
-              <ModalHeader toggle={appartToggle}>Appartments</ModalHeader>
+              <ModalHeader toggle={appartToggle}>Apartments</ModalHeader>
               <ModalBody>
-                <AppartmentPop />
+                <ApartmentPop />
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={appartToggle}>
@@ -101,7 +101,6 @@ const Middle = props => {
           </div>
         </div>
       </div>
-      //{" "}
     </div>
   );
 };

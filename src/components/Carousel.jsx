@@ -15,7 +15,7 @@ const Carouse = () => {
           />
           <Carousel.Caption>
             <h3 className="carousel-text">Property360</h3>
-            <p className="carousel-text">We Sell Appartments, Houses, Plots & Shops</p>
+            <p className="carousel-text">We Sell Apartments, Houses, Plots & Shops</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -28,7 +28,7 @@ const Carouse = () => {
 
           <Carousel.Caption>
             <h3 className="carousel-text">Property360</h3>
-            <p className="carousel-text">We Rent Appartments, Houses, & Shops</p>
+            <p className="carousel-text">We Rent Apartments, Houses, & Shops</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
