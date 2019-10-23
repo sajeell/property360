@@ -6,7 +6,7 @@ import '../../static/CompStyle.css'
 
 const POP_UP_QUERY = gql`
   query PopupQuery($listingTypeId: ID) {
-    listings (listingTypeId: $listingTypeId) {
+    listings(listingTypeId: $listingTypeId) {
       id
       listingType {
         id
@@ -31,7 +31,7 @@ export default function ApartmentPop({ listingTypeId }) {
   const { data, loading, error } = useQuery(POP_UP_QUERY, {
     variables: {
       listingTypeId,
-    }
+    },
   })
   if (error) {
     throw error
@@ -45,7 +45,7 @@ export default function ApartmentPop({ listingTypeId }) {
         {listings.length > 0 ? (
           listings.map(listing => (
             <div className="pop-item-01 popup-add">
-              <span>{listing.location.id}</span>
+              <span>{listing.location.name}</span>
               <span>{listing.listingType.name}</span>
               <span>{listing.commerce}</span>
               <span>{listing.description}</span>
