@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import gql from 'graphql-tag.macro'
 import { makeStyles } from '@material-ui/core/styles'
 import InputLabel from '@material-ui/core/InputLabel'
@@ -10,6 +10,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Upload from './AdminUpload.jsx'
 import AddLocation from './AdminAddLocation.jsx'
 import { useQuery, useMutation } from '../../apollo'
+
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
 const ADMIN_ADD_QUERY = gql`
   query AdminAddQuery {
@@ -62,7 +64,11 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function AdminAdd() {
+export default function AdminAdd(props) {
+  const { className } = props
+  const [areaModal, setAreaModal] = useState(false)
+
+  const areaToggle = () => setAreaModal(!areaModal)
   const classes = useStyles()
   const [location, setLocation] = React.useState('')
   const [commerce, setCommerce] = React.useState('')
@@ -140,7 +146,7 @@ export default function AdminAdd() {
 
   return (
     <div className={classes.wrapper}>
-      <Router>
+      <Router forceRefresh>
         <form autoComplete="off" method="post" onSubmit={handleFormSubmit}>
           <FormControl className={classes.formControl}>
             <InputLabel htmlFor="demo-controlled-open-select">Location:</InputLabel>
@@ -210,15 +216,25 @@ export default function AdminAdd() {
           </FormControl>
           <Upload />
           <p className={classes.text}>
-            Want to increase coverage location? <Link to="#">Click Here!</Link>
+            Want to increase coverage location? <a onClick={areaToggle}>Click Here!</a>
           </p>
+          <Modal isOpen={areaModal} toggle={areaToggle} className={className}>
+            <ModalHeader toggle={areaToggle}>Add Location:</ModalHeader>
+            <ModalBody>
+              <AddLocation />
+            </ModalBody>
+            <ModalFooter>
+              <Button color="secondary" onClick={areaToggle}>
+                Cancel
+              </Button>
+            </ModalFooter>
+          </Modal>
           <InputLabel>Description:</InputLabel>
           <textarea style={{ resize: 'none' }} value={description} onChange={handleDescriptionChange}></textarea>
           <Button variant="outlined" color="primary" className={classes.button} type="submit">
             Add Property
           </Button>
         </form>
-        <AddLocation />
       </Router>
     </div>
   )

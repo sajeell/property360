@@ -194,6 +194,16 @@ li {
     }
 }
 
+@media only screen and (max-width: 465px) {
+    .middle1-wrapper {
+        width: 50px;
+    }
+    .middle-row-1 {
+        width: 52px;
+        padding: 2%;
+    }
+}
+
 #middle-heading {
     padding: 3%;
     margin-left: 40%;
@@ -219,7 +229,7 @@ h3 {
     display: flex;
     flex-direction: column;
     -webkit-box-shadow: -1px 3px 15px 5px #000000;
-    box-shadow: -1px 3px 15px 5px #000000;
+    box-shadow: -1px 1px 3px 2px #000000;
     background-size: cover;
     justify-content: center;
     text-align: center;
@@ -228,4 +238,25 @@ h3 {
 .pop-item-01 img {
     margin-left: 25px;
     margin-top: 20px;
+}
+
+
+/*Styling the divs of aka items of popups*/
+
+.apart-divs {
+    padding: 2%;
+}
+
+.shop-divs {
+    padding: 5%;
+}
+
+.popup-query {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    text-align: center;
+    -webkit-box-shadow: -1px 3px 15px 5px #000000;
+    box-shadow: -1px 1px 3px 2px #000000;
+    justify-content: space-evenly;
 }

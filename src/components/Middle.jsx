@@ -29,7 +29,9 @@ const Middle = props => {
             <Modal isOpen={appartModal} toggle={appartToggle} className={className}>
               <ModalHeader toggle={appartToggle}>Apartments</ModalHeader>
               <ModalBody>
-                <LocationPopup listingTypeId="1" />
+                <div className="apart-divs">
+                  <LocationPopup listingTypeId="1" />
+                </div>
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={appartToggle}>
@@ -45,7 +47,9 @@ const Middle = props => {
             <Modal isOpen={houseModal} toggle={houseToggle} className={className}>
               <ModalHeader toggle={houseToggle}>House:</ModalHeader>
               <ModalBody>
-                <LocationPopup listingTypeId="2" />
+                <div className="house-divs">
+                  <LocationPopup listingTypeId="2" />
+                </div>
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={houseToggle}>
@@ -62,8 +66,11 @@ const Middle = props => {
             </Button>
             <Modal isOpen={plotModal} toggle={plotToggle} className={className}>
               <ModalHeader toggle={plotToggle}>Plots:</ModalHeader>
+
               <ModalBody>
-                <LocationPopup listingTypeId="4" />
+                <div className="plots-divs">
+                  <LocationPopup listingTypeId="4" />
+                </div>
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={plotToggle}>
@@ -79,7 +86,9 @@ const Middle = props => {
             <Modal isOpen={shopModal} toggle={shopToggle} className={className}>
               <ModalHeader toggle={shopToggle}>Shop:</ModalHeader>
               <ModalBody>
-                <LocationPopup listingTypeId="3" />
+                <div className="shop-divs">
+                  <LocationPopup listingTypeId="3" />
+                </div>
               </ModalBody>
               <ModalFooter>
                 <Button color="secondary" onClick={shopToggle}>
