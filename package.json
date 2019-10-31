@@ -1,9 +1,7 @@
 {
     "name": "property-work-web",
     "version": "0.1.0",
-    "engines": {
-        "yarn": "1.19.1"
-    },
+
     "private": false,
     "dependencies": {
         "@apollo/react-hooks": "^3.1.2",
@@ -37,8 +35,8 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "heroku-postbuild": "npm install && cd property-work-web && npm install --only-dev && npm install && npm run build"
+        "eject": "react-scripts eject"
+
     },
     "eslintConfig": {
         "extends": "react-app"
