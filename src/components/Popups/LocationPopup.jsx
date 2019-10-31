@@ -38,7 +38,7 @@ export default function ApartmentPop({ listingTypeId }) {
   console.log('variables', {
     listingTypeId,
   })
-  const { data, loading, error } = useQuery(POP_UP_QUERY, {
+  const { data, error } = useQuery(POP_UP_QUERY, {
     variables: {
       listingTypeId,
     },

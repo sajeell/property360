@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import { fade, makeStyles } from '@material-ui/core/styles'
 import logo from '../static/WhatsApp Image 2019-10-08 at 2.07.00 PM.jpeg'
-import Button from '@material-ui/core/Button'
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -69,7 +69,6 @@ export default function Header() {
           <Typography className={classes.title} variant="h6" noWrap>
             <img src={logo} alt="logo" height="70px" width="200px" />
           </Typography>
-          
         </Toolbar>
       </AppBar>
     </div>

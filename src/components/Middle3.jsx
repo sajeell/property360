@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     justifyContent: 'center',
-    minWidth: 450,
+
     width: '100%',
     paddingRight: '2%',
   },
@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     padding: '1em',
     position: 'relative',
     height: 220,
-  
+
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
       height: 100,

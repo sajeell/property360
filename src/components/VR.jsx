@@ -9,8 +9,8 @@ const VR = () => (
     <iframe
       src={'http://www.theproperty360.com/Aries360VR/Project8.html'}
       title={'VR Image!'}
-      height={200}
-      width={950}
+      height={350}
+      width={400}
     ></iframe>
   </div>
 )

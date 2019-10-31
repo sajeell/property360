@@ -34,7 +34,7 @@ const Footer = props => {
         <Modal isOpen={careerModal} toggle={careerToggle} className={className}>
           <ModalHeader toggle={careerToggle}>CAREERS</ModalHeader>
           <ModalBody>
-            Send your CV/Resumè and Cover Letter at <a href="">lightimage3d@live.co.uk</a>
+            Send your CV/Resumè and Cover Letter at <a href="www.gmail.com">lightimage3d@live.co.uk</a>
           </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={careerToggle}>

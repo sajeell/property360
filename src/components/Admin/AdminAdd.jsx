@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import Button from '@material-ui/core/Button'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import Upload from './AdminUpload.jsx'
 import AddLocation from './AdminAddLocation.jsx'
 import { useQuery, useMutation } from '../../apollo'
@@ -79,7 +79,7 @@ export default function AdminAdd(props) {
   const [description, setDescription] = React.useState('')
 
   const [mutate] = useMutation(ADD_LISTING_MUTATION)
-  const { data, loading, error } = useQuery(ADMIN_ADD_QUERY)
+  const { data, error } = useQuery(ADMIN_ADD_QUERY)
   if (error) {
     throw error
   }
@@ -216,7 +216,7 @@ export default function AdminAdd(props) {
           </FormControl>
           <Upload />
           <p className={classes.text}>
-            Want to increase coverage location? <a onClick={areaToggle}>Click Here!</a>
+            Want to increase coverage location? <p onClick={areaToggle}>Click Here!</p>
           </p>
           <Modal isOpen={areaModal} toggle={areaToggle} className={className}>
             <ModalHeader toggle={areaToggle}>Add Location:</ModalHeader>
