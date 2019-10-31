@@ -194,6 +194,10 @@ li {
     }
 }
 
+.middle1-wrapper {
+    display: flex;
+}
+
 @media only screen and (max-width: 465px) {
     .middle1-wrapper {
         width: 50px;
@@ -253,10 +257,10 @@ h3 {
 
 .popup-query {
     display: flex;
-    flex-direction: column;
     padding: 5%;
     text-align: center;
-    -webkit-box-shadow: -1px 3px 15px 5px #000000;
-    box-shadow: -1px 1px 3px 2px #000000;
-    justify-content: space-evenly;
+}
+
+.apart-divs {
+    display: flex;
 }

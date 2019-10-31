@@ -34,48 +34,45 @@ const AdminRouter = () => {
   return (
     <div className="admin-drawer-wrapper">
       <Router>
+        <div className={classes.root}>
+          <AppBar position="static" color="default">
+            <Toolbar>
+              <Typography variant="h6" className={classes.title}>
+                <img src={logo} alt="logo" height="70px" width="200px" />
+              </Typography>
+              <Link to="/admin/add">
+                <Button color="inherit">Add</Button>
+              </Link>
+              <Link to="/admin/del">
+                <Button color="inherit">Delete</Button>
+              </Link>
 
-      <div className={classes.root}>
-        <AppBar position="static" color="default">
-          <Toolbar>
-            <Typography variant="h6" className={classes.title}>
-              <img src={logo} alt="logo" height="70px" width="200px" />
-            </Typography>
-            <Link to="/admin/add">
-              <Button color="inherit">Add</Button>
-            </Link>
-            <Link to="/admin/del">
-              <Button color="inherit">Delete</Button>
-            </Link>
-            <Link to="/admin/modify">
-              <Button color="inherit">Modify</Button>
-            </Link>
-            <Link to="/admin/profile" color="inherit">
-              Profile
-            </Link>
-          </Toolbar>
-        </AppBar>
-      </div>
+              <Link to="/admin/profile" color="inherit">
+                Profile
+              </Link>
+            </Toolbar>
+          </AppBar>
+        </div>
 
-      <Switch>
-        <Route exact path="/admin">
-          Hi
-        </Route>
-        <Route path="/admin/add">
-          <Add />
-        </Route>
-        <Route path="/admin/del">
-          <Delete />
-        </Route>
-        <Route path="/admin/modify">
-          <Modify />
-        </Route>
-        <Route path="/admin/profile">
-          <Profile />
-        </Route>
-        <Route path="*" component={ErrorPage} />
-      </Switch>
-    </Router>
+        <Switch>
+          <Route exact path="/admin">
+            Hi
+          </Route>
+          <Route exact path="/admin/add">
+            <Add />
+          </Route>
+          <Route exact path="/admin/del">
+            <Delete />
+          </Route>
+          <Route exact path="/admin/modify">
+            <Modify />
+          </Route>
+          <Route exact path="/admin/profile">
+            <Profile />
+          </Route>
+          <Route component={ErrorPage} />
+        </Switch>
+      </Router>
     </div>
   )
 }

@@ -25,7 +25,7 @@ const LISTING_QUERY = gql`
 `
 
 function Profile() {
-  const { data, loading, error } = useQuery(LISTING_QUERY)
+  const { data,error } = useQuery(LISTING_QUERY)
   if (error) {
     throw error
   }

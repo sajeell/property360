@@ -1,8 +1,19 @@
 import React from 'react'
 import gql from 'graphql-tag.macro'
 import { useQuery } from '../../apollo'
-
+import { makeStyles } from '@material-ui/core/styles'
+import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import CardMedia from '@material-ui/core/CardMedia'
+import Typography from '@material-ui/core/Typography'
 import '../../static/CompStyle.css'
+const useStyles = makeStyles({
+  card: {
+    maxWidth: 345,
+  },
+})
 const POP_UP_QUERY = gql`
   query PopupQuery($listingTypeId: ID) {
     listings(listingTypeId: $listingTypeId) {
@@ -35,7 +46,7 @@ export default function ApartmentPop({ listingTypeId }) {
   if (error) {
     throw error
   }
-
+  const classes = useStyles()
   const listings = data ? data.listings : []
 
   return (
@@ -44,10 +55,33 @@ export default function ApartmentPop({ listingTypeId }) {
         {listings.length > 0 ? (
           listings.map(listing => (
             <div className="popup-query">
-              <span>{listing.location.name}</span>
-              <span>{listing.listingType.name}</span>
-              <span>{listing.commerce}</span>
-              <span>{listing.description}</span>
+              <Card className={classes.card}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    alt="Image Not Found!!"
+                    height="140"
+                    image="https://www.totalparco.com.pk/sites/g/files/wompnd651/f/styles/paragraph_media_960/public/atoms/image/img_0463_1_0.jpg?itok=_IH5uICP"
+                    title="Property"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h6" component="h6">
+                      Property Details:
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      <span>{listing.location.name}</span>
+                      <br />
+                      <span>{listing.listingType.name}</span>
+                      <br />
+                      <span>{listing.commerce}</span>
+                      <br />
+                      <span>{listing.description}</span>
+                      <br />
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions></CardActions>
+              </Card>
             </div>
           ))
         ) : (
@@ -64,39 +98,54 @@ export default function ApartmentPop({ listingTypeId }) {
     </div>
   )
 }
+// import React from 'react';
+// import { makeStyles } from '@material-ui/core/styles';
+// import Card from '@material-ui/core/Card';
+// import CardActionArea from '@material-ui/core/CardActionArea';
+// import CardActions from '@material-ui/core/CardActions';
+// import CardContent from '@material-ui/core/CardContent';
+// import CardMedia from '@material-ui/core/CardMedia';
+// import Button from '@material-ui/core/Button';
+// import Typography from '@material-ui/core/Typography';
 
-/*<Card className={classes.card}>
-import Card from '@material-ui/core/Card'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
-<CardActionArea>
-<CardMedia
-          component="img"
-          alt="Contemplative Reptile"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card> */
+// const useStyles = makeStyles({
+//   card: {
+//     maxWidth: 345,
+//   },
+// });
+
+// export default function ImgMediaCard() {
+//   const classes = useStyles();
+
+//   return (
+//     <Card className={classes.card}>
+//       <CardActionArea>
+//         <CardMedia
+//           component="img"
+//           alt="Contemplative Reptile"
+//           height="140"
+//           image="/static/images/cards/contemplative-reptile.jpg"
+//           title="Contemplative Reptile"
+//         />
+//         <CardContent>
+//           <Typography gutterBottom variant="h5" component="h2">
+//             Lizard
+//           </Typography>
+//           <Typography variant="body2" color="textSecondary" component="p">
+//             <span>{listing.location.name}</span>
+//<span>{listing.listingType.name}</span>
+//<span>{listing.commerce}</span>
+//<span>{listing.description}</span>
+//           </Typography>
+//         </CardContent>
+//       </CardActionArea>
+//       <CardActions>
+//         <Button size="small" color="primary">
+//           Share
+//         </Button>
+//         <Button size="small" color="primary">
+//           Learn More
+//         </Button>
+//       </CardActions>
+//     </Card>
+//   );

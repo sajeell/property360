@@ -225,7 +225,7 @@ export default function AdminAdd(props) {
             </ModalBody>
             <ModalFooter>
               <Button color="secondary" onClick={areaToggle}>
-                Cancel
+                Add Area
               </Button>
             </ModalFooter>
           </Modal>

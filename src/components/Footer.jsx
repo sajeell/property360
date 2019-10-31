@@ -23,7 +23,7 @@ const Footer = props => {
         <p onClick={aboutToggle}>ABOUT US</p>
         <Modal isOpen={aboutModal} toggle={aboutToggle} className={className}>
           <ModalHeader toggle={aboutToggle}>ABOUT US</ModalHeader>
-          <ModalBody>About Us jajajjadjnasfjlnfklnslfndslfnsdlfnsdlfnlsdflds</ModalBody>
+          <ModalBody>We are the pioneers in real estate</ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={aboutToggle}>
               Cancel
@@ -33,7 +33,9 @@ const Footer = props => {
         <p onClick={careerToggle}>CAREERS</p>
         <Modal isOpen={careerModal} toggle={careerToggle} className={className}>
           <ModalHeader toggle={careerToggle}>CAREERS</ModalHeader>
-          <ModalBody>No Vacancies right now</ModalBody>
+          <ModalBody>
+            Send your CV/Resumè and Cover Letter at <a href="">lightimage3d@live.co.uk</a>
+          </ModalBody>
           <ModalFooter>
             <Button color="secondary" onClick={careerToggle}>
               Cancel
